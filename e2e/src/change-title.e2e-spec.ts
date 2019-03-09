@@ -13,39 +13,39 @@ describe('manipulate title and scroll', () =>{
         page.navigateToHome();
     })
 
-    // it('should change title', () =>{
-  //   let changeTitle = element(by.id("change-title"));
-  //   changeTitle.clear();
-  //   changeTitle.sendKeys("dit is het nieuwe titel");
-  //   expect(element(by.xpath("//div/h1")).getText()).toEqual("Welcome to dit is het nieuwe titel!");
-  // });
+    it('should change title', () =>{
+    let changeTitle = element(by.id("change-title"));
+    changeTitle.clear();
+    changeTitle.sendKeys("dit is het nieuwe titel");
+    expect(element(by.xpath("//div/h1")).getText()).toEqual("Welcome to dit is het nieuwe titel!");
+  });
 
-  // it('scroll down', () =>{
-  //   let scrollTest = element(by.xpath("//p/span/h1"));
-  //   browser.actions()
-  //   .mouseMove(scrollTest)
-  //   .mouseMove({x: 0, y: 30})
-  //   .mouseDown()
-  //   .mouseMove({x: 0, y: 100})
-  //   .doubleClick()
-  //   .perform()
-  //   .then(function (){
-  //     browser.sleep(5000);
-  //   })
-  //   expect(scrollTest.getText()).toEqual("Moved to here");
+  it('scroll down', () =>{
+    let scrollTest = element(by.xpath("//p/span/h1"));
+    browser.actions()
+    .mouseMove(scrollTest)
+    .mouseMove({x: 0, y: 30})
+    .mouseDown()
+    .mouseMove({x: 0, y: 100})
+    .doubleClick()
+    .perform()
+    .then(function (){
+      browser.sleep(5000);
+    })
+    expect(scrollTest.getText()).toEqual("Moved to here");
 
-  // })
+  })
 
-//   it('change the title 100 times', () => {
-//     for (let i = 1; i <= 100; i++) {
-//       test.getTitleInput().clear();
-//       test.getTitleInput().sendKeys(`test 0${i}`);
-//       if (i == 100) {
-//         test.getTitleInput().clear();
-//         test.getTitleInput().sendKeys("finished!!!!!!!!!!!");
-//         browser.sleep(2000);
-//       }
-//     }
-//   })
+  it('change the title 100 times', () => {
+    for (let i = 1; i <= 100; i++) {
+      test.getTitleInput().clear();
+      test.getTitleInput().sendKeys(`test 0${i}`);
+      if (i == 100) {
+        test.getTitleInput().clear();
+        test.getTitleInput().sendKeys("finished!!!!!!!!!!!");
+        browser.sleep(2000);
+      }
+    }
+  })
   
 });
